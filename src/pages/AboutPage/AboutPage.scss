@@ -1,0 +1,94 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+
+.about-page {
+  padding: $padding-32;
+  color: $dark-color;
+
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: $padding-32;
+    color: $purple-color;
+  }
+
+  &__content {
+    @include flex-row;
+    gap: $padding-32;
+    align-items: flex-start;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    width: 300px;
+    height: auto;
+    border-radius: 5%;
+    object-fit: cover;
+    border: 4px solid $pink-color-pastel;
+  }
+
+  &__text {
+    max-width: 800px;
+    line-height: 1.6;
+
+    h2 {
+      color: $green-color;
+      margin-top: $padding-24;
+    }
+
+    p {
+      margin-bottom: $padding-16;
+    }
+  }
+
+  &__skills {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $padding-8;
+
+    li {
+      background: $purple-color-pastel;
+      padding: $padding-8 $padding-16;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    gap: $padding-16;
+    margin-top: $padding-24;
+
+    &-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid $pink-color-pastel;
+    }
+  }
+
+  &__social-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: $padding-16;
+
+    a {
+      color: $dark-green;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        color: $purple-color;
+      }
+    }
+  }
+}

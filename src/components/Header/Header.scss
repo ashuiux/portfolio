@@ -1,0 +1,25 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white ;
+  flex-direction: row;
+  align-items: center;
+  color: $dark-color;
+  text-decoration: none;
+  padding: $padding-24 $padding-16;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  @include tablet
+  {
+    padding: $padding-24 $padding-16;
+  }
+  @include desktop
+  {
+    padding: $padding-24 $padding-16;
+  }
+
+}

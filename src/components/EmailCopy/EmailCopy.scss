@@ -1,0 +1,78 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=content_copy');
+
+
+.mailto
+
+  
+  .mailto-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    color: $dark-color;
+  
+    &:hover .mailto-message,
+    &:focus .mailto-message,
+    &:focus-within .mailto-message {
+      display: block;
+    }
+    @include tablet {
+      font-size: 1.25rem;
+    }
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  
+    
+  }
+  
+  .mailto-message {
+    top: .0625rem;
+    left: 50%;
+    margin-bottom: -0.3125rem;
+    transform: translate(-50%, -100%);
+    position: absolute;
+    display: none;
+    width: auto;
+    white-space: nowrap;
+    font-size: .75rem;
+    background-color: $dark-color;
+    color: $off-white;
+    padding: .125rem .375rem;
+    border-radius: .125rem;
+   
+    
+    &:after,
+    &:before {
+      content: '';
+    }
+  
+    &:before {
+      border: solid transparent;
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: #26262600;
+      border-top-color: #26262600;
+      border-width: 4px;
+    
+    }
+
+    
+  }
+  
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+  }
+  

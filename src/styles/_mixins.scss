@@ -1,0 +1,29 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+
+  .flex-heading {
+    padding-top: 0px;
+    }
+}

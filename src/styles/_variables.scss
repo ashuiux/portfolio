@@ -1,0 +1,36 @@
+// Breakpoints
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Padding Variables
+$padding-4: 0.25rem;
+$padding-8: 0.5rem;
+$padding-16: 1rem;
+$padding-24: 1.5rem;
+$padding-32: 2rem;
+$padding-40: 2.5rem;
+$padding-48: 3rem;
+$padding-56: 3.5rem;
+$padding-64: 4rem;
+$padding-72: 4.5rem;
+$padding-80: 5rem;
+
+// Colors
+$purple-color: #aca0f2;
+$yellow-color: #f2cb04;
+$pink-color: #d99690;
+$green-color: #53bf35;
+$dark-green: #284d24;
+$light-gray: #f2f2f2;
+$off-white: #f3f3f7;
+$dark-color: #0d0d0d;
+$purple-color-pastel: #E2D8F9; // Pastel purple
+$pink-color-pastel: #fffcf2; // Pastel pink
+$green-color-pastel: #B9E1A6; 
+$yellow-color-pastel: #ffef9d;
+
+$gradient-background-pastel: linear-gradient(60deg, 
+    $purple-color-pastel 25%, 
+    $pink-color-pastel 40%, 
+   );

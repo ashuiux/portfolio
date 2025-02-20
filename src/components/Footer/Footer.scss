@@ -1,0 +1,113 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+
+
+.footer {
+  background-color: $dark-color; // Dark background
+  padding: $padding-32 $padding-16;
+  text-align: center;
+  color: $off-white; // Light text for contrast
+
+  &__content {
+    max-width: $desktop-breakpoint;
+    margin: 0 auto;
+  }
+
+  &__external-links {
+    @include flex-row;
+    @include flex-center;
+    margin-bottom: $padding-24;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $off-white; // Light text for links
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7; // Subtle hover effect
+    }
+
+    &-arrow {
+      margin-left: $padding-8;
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  p {
+    color: $off-white;
+    font-size: 0.875rem;
+    margin: $padding-8 0;
+
+    &.footer__copyright {
+      margin-top: $padding-24;
+      font-size: 0.75rem;
+      color: $light-gray; // Slightly lighter for copyright text
+    }
+  }
+
+  &__additional-text {
+    font-size: 0.875rem;
+    color: $light-gray;
+    margin-top: $padding-16;
+    line-height: 1.5;
+
+    a {
+      color: $off-white;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  @include tablet {
+    padding: $padding-48 $padding-24;
+
+    &__content {
+      max-width: $tablet-breakpoint;
+    }
+
+    &__link {
+      font-size: 1.125rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    &__additional-text {
+      font-size: 1rem;
+    }
+  }
+
+  @include desktop {
+    padding: $padding-64 $padding-32;
+
+    &__content {
+      max-width: $desktop-breakpoint;
+    }
+
+    &__link {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+    }
+
+    &__additional-text {
+      font-size: 1.125rem;
+    }
+  }
+}

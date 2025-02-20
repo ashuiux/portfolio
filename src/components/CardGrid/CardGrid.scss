@@ -1,0 +1,82 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.cardgrid {
+  padding: $padding-32 $padding-16;
+
+  &__title {
+    text-align: center;
+    align-self: flex-start;
+    padding-bottom: $padding-24;
+    font-size: 4rem;
+    margin-top: 8%;
+    margin-bottom: 4%;
+    font-weight: 300;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    padding-top: $padding-16;
+    padding-bottom: $padding-16;
+    border-top: 1px solid $dark-color;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    &-desc {
+      width: 60%;
+
+      @include tablet {
+        width: 50%;
+      }
+      @include desktop {
+        width: 50%;
+      }
+    }
+  }
+  &__heading {
+    font-weight: 500;
+  }
+  &__header {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+
+    @include tablet {
+      flex-direction: row;
+    }
+    @include desktop {
+      width: row;
+    }
+  }
+
+  &__link {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: $dark-color;
+    border: 0.0625rem solid $dark-color;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    align-items: center;
+    max-height: fit-content;
+
+    &-arrow {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+}
