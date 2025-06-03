@@ -1,20 +1,20 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-
 .about-page {
-  padding: $padding-32;
   color: $dark-color;
 
   &__title {
-    font-size: 2.5rem;
-    text-align: center;
+    font-size: 2rem;
+    text-align: left;
     margin-bottom: $padding-32;
-    color: $purple-color;
+    padding-left: 1rem;
+    color: $dark-color;
+    width: 50%;
   }
 
   &__content {
-    @include flex-row;
+    flex-direction: row;
     gap: $padding-32;
     align-items: flex-start;
 
@@ -25,7 +25,7 @@
   }
 
   &__image {
-    width: 300px;
+    width: 800px;
     height: auto;
     border-radius: 5%;
     object-fit: cover;
@@ -54,23 +54,32 @@
     gap: $padding-8;
 
     li {
-      background: $purple-color-pastel;
       padding: $padding-8 $padding-16;
       border-radius: 20px;
       font-size: 0.9rem;
+    }
+    img
+    {
+      width: 2rem;
     }
   }
 
   &__gallery {
     display: flex;
+    flex-wrap: wrap;
     gap: $padding-16;
     margin-top: $padding-24;
 
+    &-card {
+      background-color: $off-white;
+      padding: $padding-16;
+      border-radius: 1rem;
+      height: fit-content;
+    }
     &-image {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
+      width: 16rem;
+      object-fit: fill;
+      border-radius: 0.625rem;
       border: 2px solid $pink-color-pastel;
     }
   }

@@ -5,7 +5,7 @@ const testimonials = [
   {
     id: 1,
     name: "Ignacio Guillén Torres",
-    work: "Social Media Specialist @ Trendline Property Services Ltd.",
+    work: "Social Media Strategist @ Pulsara",
     feedback: `I had the pleasure of taking a UI/UX design course with Aswini, and I can honestly say that she is one of the best instructors I have ever had. 
 
 She has a <strong> deep knowledge and understanding of the principles and practices of user interface and user experience design,  </strong> and she is able to explain them in a clear and engaging way. 

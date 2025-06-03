@@ -14,9 +14,9 @@ function Header() {
       </Link>
       <nav className="header__nav">
         <ul className="header__nav-list">
-          {/* <li className="header__nav-item">
+          <li className="header__nav-item">
             <Link to="/about" className="header__nav-link">About</Link>
-          </li> */}
+          </li>
         </ul>
       </nav>
     </header>
