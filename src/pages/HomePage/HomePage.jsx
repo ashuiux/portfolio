@@ -18,7 +18,7 @@ function HomePage() {
         </h1>
         <h1 className="homepage__title homepage__title--dev">Developer</h1>
         <p className="homepage__subtitle">
-          Crafting intuitive digital experiences for 7+ years
+          Crafting intuitive digital experiences for 8+ years
         </p>
       </section>
 
