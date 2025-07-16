@@ -11,7 +11,7 @@ function HomePage() {
     <div className="homepage">
       <section className="homepage__hero">
       <p className="homepage__subtitle">
-        Hi, I'm  Aswini (Ash)
+        Hi, I'm Aswini
         </p>
         <h1 className="homepage__title homepage__title--design">
           UI/UX Designer

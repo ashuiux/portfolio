@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AboutPage.scss";
+// All image imports below
 import figma from "../../../public/assets/figma_logo.svg";
 import Illustrator from "../../../public/assets/logos_adobe-illustrator.svg";
 import Photoshop from "../../../public/assets/logos_adobe-photoshop.svg";
@@ -53,348 +54,225 @@ import Trello from "../../../public/assets/logos_trello.svg";
 import Mailchimp from "../../../public/assets/mailchimp.svg";
 
 function AboutPage() {
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = (src) => {
+    setModalImage(src);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+    document.body.style.overflow = "auto";
+  };
+
+  const tools = [
+    { src: figma, label: "Figma" },
+    { src: Sketch, label: "Sketch" },
+    { src: Invision, label: "InVision" },
+    { src: Photoshop, label: "Photoshop" },
+    { src: Illustrator, label: "Illustrator" },
+    { src: AfterEffects, label: "After Effects" },
+    { src: Premiere, label: "Premiere Pro" },
+    { src: Xd, label: "Adobe XD" },
+    { src: GoogleWebDesigner, label: "Google Web Designer" },
+    { src: HTML5, label: "HTML5" },
+    { src: CSS, label: "CSS3" },
+    { src: JS, label: "JavaScript" },
+    { src: Reactlogo, label: "React" },
+    { src: Angular, label: "Angular" },
+    { src: Sass, label: "Sass" },
+    { src: Bootstrap, label: "Bootstrap" },
+    { src: Tailwind, label: "Tailwind" },
+    { src: TypeScript, label: "TypeScript" },
+    { src: Nodejs, label: "Node.js" },
+    { src: Express, label: "Express.js" },
+    { src: MySQL, label: "MySQL" },
+    { src: Heroku, label: "Heroku" },
+    { src: Jest, label: "Jest" },
+    { src: FastAPI, label: "FastAPI" },
+    { src: Axios, label: "Axios" },
+    { src: Postman, label: "Postman" },
+    { src: Git, label: "Git" },
+    { src: VSCode, label: "VSCode" },
+    { src: Netlify, label: "Netlify" },
+    { src: Squarespace, label: "Squarespace" },
+    { src: Webflow, label: "Webflow" },
+    { src: Framer, label: "Framer" },
+    { src: Unbounce, label: "Unbounce" },
+    { src: Wordpress, label: "WordPress" },
+    { src: OptimalWorkshop, label: "Optimal Workshop" },
+    { src: Maze, label: "Maze" },
+    { src: Usertesting, label: "UserTesting" },
+    { src: Firebase, label: "Firebase" },
+    { src: Analytics, label: "Google Analytics" },
+    { src: Mailchimp, label: "Mailchimp" },
+    { src: Hotjar, label: "Hotjar" },
+    { src: Surveymonkey, label: "Survey Monkey" },
+    { src: Asana, label: "Asana" },
+    { src: Trello, label: "Trello" },
+    { src: Jira, label: "Jira" },
+    { src: Slack, label: "Slack" },
+    { src: Notion, label: "Notion" },
+    { src: Sharepoint, label: "Sharepoint" },
+    { src: Coda, label: "Coda" },
+    { src: GoogleClassroom, label: "Google Classroom" },
+    { src: Moodle, label: "Moodle" },
+  ];
+
   return (
-    <div className="about-page">
-      <h2 className="about-page__title">
-        I'm Aswini, Unicorn Designer-Developer <br /> a hybrid who blends the
-        artistry of design <br />
-        with the logic of code. Fueled by curiosity, passion, and pixel-perfect
-        details
-      </h2>
-      <div className="about-page__content">
-        <div className="about-page__subsection">
-          <div className="about-page__image-container">
-            {/* <img src="../assets/me.jpeg" alt="Aswini Viswanath" className="about-page__image" /> */}
-          </div>
-          <div className="about-page__text">
-            <p className="about-page__subtitle"></p>
-            <p className="about-page__subtitle"></p>
-          </div>
+    <>
+      {modalImage && (
+        <div className="about-page__modal" onClick={closeModal}>
+          <button className="about-page__modal-close" onClick={closeModal}>
+            &times;
+          </button>
+          <img src={modalImage} alt="Enlarged view" />
+        </div>
+      )}
+
+      <div className="about-page">
+        <div className="about-page__scrollbar">
+          <div style={{ width: "var(--scroll-progress)" }} />
         </div>
 
-        <div className="about-page__subsection">
-          <h3 className="about-page__heading">Design & Prototyping Tools </h3>
-          <ul className="about-page__skills">
-            <li>
-              <img src={figma} alt="Figma Logo" /> Figma
-            </li>
-            <li>
-              <img src={Sketch} alt="Sketch Logo" />
-              Sketch
-            </li>
-
-            <li>
-              <img src={Invision} alt="Invision Logo" />
-              InVision
-            </li>
-            <li>
-              <img src={Photoshop} alt="Photoshop Logo" />
-              Adobe Photoshop
-            </li>
-            <li>
-              <img src={Illustrator} alt="Illustrator Logo" />
-              Adobe Illustrator
-            </li>
-            <li>
-              <img src={AfterEffects} alt="Illustrator Logo" />
-              Adobe After Effects
-            </li>
-            <li>
-              <img src={Premiere} alt="Premier Logo" />
-              Adobe Premiere Pro
-            </li>
-            <li>
-              <img src={Xd} alt="Adobe Xd Logo" />
-              Adobe XD
-            </li>
-            <li>
-              <img src={GoogleWebDesigner} alt="Google Web Designer Logo" />{" "}
-              Google Web Designer
-            </li>
-          </ul>
-        </div>
-
-        <div className="about-page__subsection">
-          <h3 className="about-page__heading">
-            Frontend, Backend & Database Technologies{" "}
-          </h3>
-          <ul className="about-page__skills">
-            <li>
-              <img src={HTML5} alt="HTML5 Logo" /> HTML5
-            </li>
-            <li>
-              <img src={CSS} alt="CSS3 Logo" /> CSS3
-            </li>
-            <li>
-              <img src={JS} alt="JavaScript Logo" /> JavaScript
-            </li>
-            <li>
-              <img src={Reactlogo} alt="React Logo" /> React
-            </li>
-            <li>
-              <img src={Angular} alt="Angular Logo" /> Angular
-            </li>
-            <li>
-              <img src={Sass} alt="Sass Logo" /> Sass
-            </li>
-            <li>
-              <img src={Bootstrap} alt="Bootstrap Logo" /> Bootstrap
-            </li>
-            <li>
-              <img src={Tailwind} alt="Tailwind CSS Logo" /> Tailwind
-            </li>
-            <li>
-              <img src={TypeScript} alt="TypeScript Logo" /> TypeScript
-            </li>
-            <li>
-              <img src={Nodejs} alt="Node.js Logo" /> Node.js
-            </li>
-            <li>
-              <img src={Express} alt="Express.js Logo" /> Express.js
-            </li>
-            <li>
-              <img src={MySQL} alt="MySQL Logo" /> MySQL
-            </li>
-            <li>
-              <img src={Heroku} alt="Heroku Logo" /> Heroku
-            </li>
-            <li>
-              <img src={Jest} alt="Heroku Logo" /> Jest
-            </li>
-            <li>
-              <img src={FastAPI} alt="Heroku Logo" /> Fast API
-            </li>
-            <li>
-              <img src={Heroku} alt="Heroku Logo" /> Heroku
-            </li>
-            <li>
-              <img src={Axios} alt="Heroku Logo" /> Axios
-            </li>
-            <li>
-              <img src={Postman} alt="Heroku Logo" /> Postman
-            </li>
-          </ul>
-        </div>
-
-        <div className="about-page__subsection">
-          <h3 className="about-page__heading">Version Control & DevOps </h3>
-          <ul className="about-page__skills">
-            <li>
-              <img src={Git} alt="Git Logo" /> Git
-            </li>
-            <li>
-              <img src={VSCode} alt="VSCode Logo" /> VSCode
-            </li>
-            <li>
-              <img src={Netlify} alt="Netlify Logo" /> Netlify
-            </li>
-          </ul>
-        </div>
-
-        <div className="about-page__subsection">
-          <h3 className="about-page__heading">CMS & Website Builders</h3>
-          <ul className="about-page__skills">
-            <li>
-              <img src={Squarespace} alt="Squarespace Logo" /> Squarespace
-            </li>
-            <li>
-              <img src={Webflow} alt="Webflow Logo" /> Webflow
-            </li>
-            <li>
-              <img src={Framer} alt="Webflow Logo" /> Framer
-            </li>
-            <li>
-              <img src={Unbounce} alt="Webflow Logo" /> Unbounce
-            </li>
-            <li>
-              <img src={Wordpress} alt="Webflow Logo" /> Wordpress
-            </li>
-          </ul>
-        </div>
-
-        <div className="about-page__subsection">
-          <h3 className="about-page__heading">
-            Research, Analytics & Marketing Tools
-          </h3>
-          <ul className="about-page__skills">
-            <li>
-              <img src={OptimalWorkshop} alt="OptimalWorkshop" /> Optimal
-              Workshop
-            </li>
-            <li>
-              <img src={Maze} alt="OptimalWorkshop" /> Maze
-            </li>
-            <li>
-              <img src={Usertesting} alt="User testing" /> Usertesting
-            </li>
-            <li>
-              <img src={Firebase} alt="User testing" /> Frebase
-            </li>
-            <li>
-              <img src={Analytics} alt="Google Analytics Logo" /> Google
-              Analytics
-            </li>
-            <li>
-              <img src={Mailchimp} alt="Mailchimp Logo" /> Mailchimp
-            </li>
-            <li>
-              <img src={Hotjar} alt="Hotjar Logo" /> Hotjar
-            </li>
-            <li>
-              <img src={Surveymonkey} alt="Survey Monkey" /> Survey Monkey
-            </li>
-          </ul>
-        </div>
-
-        <div className="about-page__subsection">
-          <h3 className="about-page__heading">
-            Collaboration & Project Management
-          </h3>
-          <ul className="about-page__skills">
-            <li>
-              <img src={Asana} alt="Asana Logo" /> Asana
-            </li>
-            <li>
-              <img src={Trello} alt="Trello Logo" /> Trello
-            </li>
-            <li>
-              <img src={Jira} alt="Jira Logo" /> Jira
-            </li>
-            <li>
-              <img src={Slack} alt="Slack Logo" /> Slack
-            </li>
-            <li>
-              <img src={Notion} alt="Notion Logo" /> Notion
-            </li>
-            <li>
-              <img src={Sharepoint} alt="sharepoint" /> Sharepoint
-            </li>
-            <li>
-              <img src={Coda} alt="Coda" /> Coda
-            </li>
-          </ul>
-        </div>
-
-        <div className="about-page__subsection">
-          <h3 className="about-page__heading">Learning & Educational Tools</h3>
-          <ul className="about-page__skills">
-            <li>
-              <img src={GoogleClassroom} alt="Asana Logo" /> Google Classroom
-            </li>
-            <li>
-              <img src={Moodle} alt="Trello Logo" /> Moodle
-            </li>
-          </ul>
-        </div>
-
-        <div className="about-page__subsection">
-          <h2 className="about-page__heading">Teaching & Mentorship</h2>
-          <p className="about-page__subtitle">
-            I love sharing my knowledge and experience with others. As a{" "}
-            <strong>UI/UX Instructor</strong> at Cornerstone International
-            Community College of Canada, I taught students design principles,
-            prototyping, and front-end development. It’s incredibly rewarding to
-            my students grow and succeed in the industry!
-          </p>
-          <img
-                src="/assets/teach_1.jpg"
-                alt="Teaching Photo 1"
-                className="about-page__gallery-image"
-              />
-        </div>
-
-        <div className="about-page__subsection">
-          <h2 className="about-page__heading">Travel & Photography</h2>
-          <p className="about-page__subtitle">
-            When I’m not designing or coding, you’ll find me exploring new
-            places and capturing moments through my camera lens. Traveling fuels
-            my creativity, and photography helps me see the world from unique
-            perspectives.
-          </p>
-          <div className="about-page__gallery">
-            <div className="about-page__gallery-card">
-              {" "}
-              <img
-                src="/assets/travel_1.jpg"
-                alt="Travel Photo 1"
-                className="about-page__gallery-image"
-              />
-              <p> Batu Caves, Malaysia</p>
+        <div className="about-page__content">
+          <div className="about-page__subsection">
+            <div className="about-page__image-container">
+              {/* <img src="../assets/me.jpeg" alt="Aswini Viswanath" className="about-page__image" /> */}
             </div>
-            <div className="about-page__gallery-card">
-              {" "}
-              <img
-                src="/assets/travel_5.jpg"
-                alt="Travel Photo 1"
-                className="about-page__gallery-image"
-              />
-              <p> Vancouver, Canada</p>
-            </div>
-            <div className="about-page__gallery-card">
-              {" "}
-              <img
-                src="/assets/travel_3.jpg"
-                alt="Travel Photo 1"
-                className="about-page__gallery-image"
-              />
-              <p> Chennai, India</p>
-            </div>
-            <div className="about-page__gallery-card">
-              {" "}
-              <img
-                src="/assets/travel_4.jpg"
-                alt="Travel Photo 1"
-                className="about-page__gallery-image"
-              />
-              <p> Toronto, Canada</p>
-            </div>
-            <div className="about-page__gallery-card">
-              {" "}
-              <img
-                src="/assets/travel_2.jpg"
-                alt="Travel Photo 1"
-                className="about-page__gallery-image"
-              />
-              <p> Montreal, Canada</p>
+            <div className="about-page__text">
+              <h2 className="about-page__title">
+                {" "}
+                I am a Front-end Devoleper @ CM2 Solutions, General Motors{" "}
+                <br />a hybrid who blends the artistry of design with the logic
+                of code. With over 8 years of experience spanning UX/UI design,
+                graphic design, and education, I specialize in crafting
+                intuitive, user-centered experiences.
+              </h2>
             </div>
           </div>
-        </div>
 
-        <div className="about-page__subsection">
-          <h2 className="about-page__heading">Let’s Connect!</h2>
-          <p className="about-page__subtitle">
-            Feel free to reach out if you’d like to collaborate or just chat
-            about design, development, or travel! You can find me on:
-          </p>
-          <ul className="about-page__social-links">
-            <li>
-              <a
-                href="https://github.com/ashuiux"
-                target="_blank"
-                rel="noopener noreferrer">
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/aswiniviswanath"
-                target="_blank"
-                rel="noopener noreferrer" >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.behance.net/aswini"
-                target="_blank"
-                rel="noopener noreferrer">
-                Behance
-              </a>
-            </li>
-          </ul>
+          <div className="about-page__subsection about-page__teaching">
+            <div className="about-page__text">
+              <h2 className="about-page__heading">Teaching & Mentorship</h2>
+              <p className="about-page__subtitle">
+                I love sharing my knowledge and experience with others. As a{" "}
+                <strong>UI/UX Instructor</strong> at Cornerstone International
+                Community College of Canada, I taught students design
+                principles, prototyping, and front-end development. It’s
+                incredibly rewarding to my students grow and succeed in the
+                industry!{" "}
+              </p>
+            </div>
+
+            <img
+              src="/assets/teach_1.jpg"
+              alt="Teaching Photo 1"
+              className="about-page__teaching-image"
+              onClick={() => openModal("/assets/teach_1.jpg")}
+            />
+          </div>
+
+          <div className="about-page__subsection about-page__travel">
+            <div className="about-page__gallery">
+              <div className="about-page__gallery-card">
+                {" "}
+                <img
+                  src="/assets/travel_1.jpg"
+                  alt="Travel Photo 1"
+                  className="about-page__gallery-image"
+                  onClick={() => openModal("/assets/travel_1.jpg")}
+                />
+                <p> Batu Caves, Malaysia</p>
+              </div>
+              <div className="about-page__gallery-card">
+                {" "}
+                <img
+                  src="/assets/travel_5.jpg"
+                  alt="Travel Photo 1"
+                  className="about-page__gallery-image"
+                  onClick={() => openModal("/assets/travel_5.jpg")}
+                />
+                <p> Montreal, Canada</p>
+              </div>
+              <div className="about-page__gallery-card">
+                {" "}
+                <img
+                  src="/assets/travel_3.jpg"
+                  alt="Travel Photo 1"
+                  className="about-page__gallery-image"
+                  onClick={() => openModal("/assets/travel_3.jpg")}
+                />
+                <p> Chennai, India</p>
+              </div>
+              <div className="about-page__gallery-card">
+                {" "}
+                <img
+                  src="/assets/travel_4.jpg"
+                  alt="Travel Photo 4"
+                  className="about-page__gallery-image"
+                  onClick={() => openModal("/assets/travel_4.jpg")}
+                />
+                <p> Downtown Vancouver, Canada</p>
+              </div>
+              <div className="about-page__gallery-card">
+                {" "}
+                <img
+                  src="/assets/travel_2.jpg"
+                  alt="Travel Photo 1"
+                  className="about-page__gallery-image"
+                  onClick={() => openModal("/assets/travel_2.jpg")}
+                />
+                <p> Vancouver, Canada</p>
+              </div>
+              <div className="about-page__gallery-card">
+                {" "}
+                <img
+                  src="/assets/travel_6.jpg"
+                  alt="Travel Photo 1"
+                  className="about-page__gallery-image"
+                  onClick={() => openModal("/assets/travel_6.jpg")}
+                />
+                <p> Porteau Cove Provincial Park, Canada</p>
+              </div>
+            </div>
+            <div className="about-page__travel-text">
+              <h2 className="about-page__heading">Travel & Photography</h2>
+              <p className="about-page__subtitle">
+                When I’m not designing or coding, you’ll find me exploring new
+                places and capturing moments through my camera lens. Traveling
+                fuels my creativity, and photography helps me see the world from
+                unique perspectives.
+              </p>
+            </div>
+          </div>
+
+          <section className="tools-section">
+            <h2 className="tools-section__heading">
+              Tools I Use to Design, Build & Improve Digital Experiences
+            </h2>
+            <p className="tools-section__subtitle">
+              Here are some of the tools I use to bring ideas to life—from
+              designing to coding to teaching.
+            </p>
+
+            <div className="tools-grid">
+              {tools.map((tool, index) => (
+                <div className="tool-item" key={index}>
+                  <img
+                    src={tool.src}
+                    alt={`${tool.label} Logo`}
+                    className="tool-icon"
+                  />
+                  <span className="tool-label">{tool.label}</span>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
